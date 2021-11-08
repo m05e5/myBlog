@@ -1,8 +1,8 @@
 class Comment < ApplicationRecord
   validates :text, presence: true
 
-  belongs_to :posts
-  belongs_to :users
+  belongs_to :post
+  belongs_to :user
 
   after_validation :update_comment_count
 

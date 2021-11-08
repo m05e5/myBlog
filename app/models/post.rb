@@ -1,9 +1,9 @@
 class Post < ApplicationRecord
   validates :title, presence: true
 
-  belongs_to :users
-  has_many :comments
-  has_many :likes
+  belongs_to :user
+  has_many :comments, foreign_key: 'post_id'
+  has_many :likes, foreign_key: 'post_id'
 
   after_validation :update_post_count
 
