@@ -7,9 +7,8 @@ class Post < ApplicationRecord
     Comment.where("posts_id = #{the_post_id}", params[:posts_id]).limit(5).order(created_at: :desc)
   end
 
-  def update_count(u_name)
+  def update_count(u_name, value)
     p_count = User.find_by(name: u_name.to_s)
-    p_count.PostsCounter += 1
-    p_count.save
+    p_count.update(PostsCounter: value)
   end
 end
