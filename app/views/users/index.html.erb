@@ -1,9 +1,11 @@
 <h1>Here is the list of users</h1>
 <div class="user-list">
+  <% @users.each do |person| %>
   <div class="user">
-    <% @users.each do |person| %>
-    <img src=<%= person.photo %> alt='hello world'>
-      Name: <%= person.name %><br>
-    <% end %>
+    <img src=<%= person.photo %> class='user-img' alt='hello world'>
+    <div class='user-info'>
+      <h2>Name: <%= person.name %></h2><br>
+    </div>
   </div>
+  <% end %>
 </div>
