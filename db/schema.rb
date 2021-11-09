@@ -16,47 +16,47 @@ ActiveRecord::Schema.define(version: 2021_11_04_083429) do
   enable_extension "plpgsql"
 
   create_table "comments", force: :cascade do |t|
-    t.text "Text"
+    t.text "text"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "users_id", null: false
-    t.bigint "posts_id", null: false
-    t.index ["posts_id"], name: "index_comments_on_posts_id"
-    t.index ["users_id"], name: "index_comments_on_users_id"
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
   end
 
   create_table "likes", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "users_id", null: false
-    t.bigint "posts_id", null: false
-    t.index ["posts_id"], name: "index_likes_on_posts_id"
-    t.index ["users_id"], name: "index_likes_on_users_id"
+    t.bigint "user_id", null: false
+    t.bigint "post_id", null: false
+    t.index ["post_id"], name: "index_likes_on_post_id"
+    t.index ["user_id"], name: "index_likes_on_user_id"
   end
 
   create_table "posts", force: :cascade do |t|
-    t.string "Title"
-    t.text "Text"
-    t.integer "CommentCounter"
-    t.integer "LikesCounter"
+    t.string "title"
+    t.text "text"
+    t.integer "commentCounter"
+    t.integer "likeCounter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "users_id", null: false
-    t.index ["users_id"], name: "index_posts_on_users_id"
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "Name"
+    t.string "name"
     t.string "photo"
-    t.string "Bio"
-    t.integer "PostsCounter"
+    t.string "bio"
+    t.integer "postCounter"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "comments", "posts", column: "posts_id"
-  add_foreign_key "comments", "users", column: "users_id"
-  add_foreign_key "likes", "posts", column: "posts_id"
-  add_foreign_key "likes", "users", column: "users_id"
-  add_foreign_key "posts", "users", column: "users_id"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "likes", "posts"
+  add_foreign_key "likes", "users"
+  add_foreign_key "posts", "users"
 end

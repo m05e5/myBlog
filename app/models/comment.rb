@@ -1,5 +1,5 @@
 class Comment < ApplicationRecord
-  validates :text, presence: true
+  validates :Text, presence: true
 
   belongs_to :post
   belongs_to :user
@@ -10,6 +10,6 @@ class Comment < ApplicationRecord
 
   def update_comment_count(p_title, value)
     c_counter = Post.find_by(title: p_title.to_s)
-    c_counter.update(CommentsCounter: value)
+    c_counter.update(CommentCounter: value)
   end
 end

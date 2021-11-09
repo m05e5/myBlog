@@ -13,8 +13,7 @@ class Post < ApplicationRecord
 
   private
 
-  def update_post_count(u_name, value)
-    p_count = User.find_by(name: u_name.to_s)
-    p_count.update(PostsCounter: value)
+  def update_post_count
+    User.find_by(id: 1).update(postCounter: 1)
   end
 end
