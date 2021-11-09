@@ -3,5 +3,8 @@ class UsersController < ApplicationController
     @users = User.order(created_at: :desc)
   end
 
-  def show; end
+  def show
+    @user = User.where(id: params[:id])
+    @posts = Post.where(user_id: params[:id])
+  end
 end
