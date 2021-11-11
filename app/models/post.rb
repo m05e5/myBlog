@@ -14,8 +14,8 @@ class Post < ApplicationRecord
   private
 
   def update_post_count
-    count = User.find_by(id: 1)
-    count.post_counter = 1
+    count = User.find_by(id: :user_id)
+    count.post_counter = count.post_counter + 1
     count.save
   end
 end
