@@ -16,7 +16,7 @@
   </div>
   <% @posts.each do |post| %>
     <div class="post">
-      <h2> <%= post.title %> <%= post.id %></h2>
+      <h2> <%= post.title %></h2>
       <div class='long-text'><%= post.text %></div>
       <div class="counter"><p>Comments: <%= post.comment_counter %>,Likes: <%= post.like_counter %><p></div>
       <div class='comments'>

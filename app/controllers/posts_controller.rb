@@ -4,9 +4,8 @@ class PostsController < ApplicationController
     @user = User.find_by(id: params[:user_id])
   end
 
-  def comments_per_post(post_id)
-    Comment.where(post_id: post_id).limit(5).order(created_at: :desc)
+  def show
+    @post = Post.find_by(id: params[:id])
+    @comments = Comment.where(post_id: params[:id]).order(created_at: :desc)
   end
-
-  def show; end
 end

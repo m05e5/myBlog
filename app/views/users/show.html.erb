@@ -1,5 +1,5 @@
 <div class = 'container'>
-  <div class="user">
+  <a href="<%= @user.id %>/posts" class="user">
     <div class="user-head">
       <img src=<%= @user.photo %> class='user-img' alt='hello world'>
       <div class='user-info'>
@@ -13,12 +13,12 @@
       <h3>Bio</h3>
       <%= @user.bio %>
     </div>
-  </div>
+  </a>
   <% @posts.each do |post| %>
-    <div class="post">
+    <a href="<%= @user.id %>/posts/<%= post.id %>" class="post">
       <h2> <%= post.title %> </h2>
       <div class='long-text'><%= post.text %></div>
       <div class="counter"><p>Comments: <%= post.comment_counter %>,Likes: <%= post.like_counter %><p></div>
-    </div>
+    </a>
   <% end %>
 </div>
