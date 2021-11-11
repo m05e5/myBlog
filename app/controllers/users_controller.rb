@@ -5,6 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by(id: params[:id])
-    @posts = Post.where(user_id: params[:id]).limit(5)
+    @posts = Post.where(user_id: params[:id]).limit(5).order(created_at: :desc)
   end
 end

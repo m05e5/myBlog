@@ -12,6 +12,7 @@
   h2 {
     margin: 5px;
   }
+
   .counter {
     margin: 1rem;
     display: flex;
@@ -49,11 +50,13 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
+
       .u_post_count {
         margin: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: end;
+
         p {
           margin: 0;
           color: grey;
@@ -77,7 +80,7 @@
   align-items: center;
   width: 100%;
   gap: 2rem;
-  
+
   a {
     text-decoration: none;
     width: 50%;
@@ -121,7 +124,6 @@
 
 //show view
 .container {
-  width: 60%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -134,6 +136,16 @@
   line-height: 20px;
   overflow: hidden;
   height: 40px;
-  text-overflow: ellipsis; 
+  text-overflow: ellipsis;
   // white-space: nowrap;
+}
+
+.see_more {
+  text-decoration: none;
+  color: black;
+  border: 0.5px solid rgb(185, 185, 185);
+  background-color: rgb(194, 194, 194);
+  cursor: pointer;
+  padding: 5px;
+  box-shadow: 3px 3px 4px rgb(218, 218, 218);
 }
