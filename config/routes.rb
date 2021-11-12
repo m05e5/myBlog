@@ -6,6 +6,5 @@ Rails.application.routes.draw do
   post '/create', to: 'posts#create'
   post '/users/:user_id/posts/:post_id/create', to: 'comments#create'
   post '/like/create', to: 'likes#create'
-  post '/like/delete', to: 'likes#delete'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

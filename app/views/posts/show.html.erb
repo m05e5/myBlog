@@ -3,6 +3,13 @@
   <div class="counter"><p>Comments: <%= @post.comments_counter %>,Likes: <%= @post.likes_counter %><p></div>
   <div class='text'><%= @post.text %></div> 
   <div class='comments'>
+
+    <%= form_with model: @like, class: "like-form", url: '/like/create' do |form| %>
+    <%= hidden_field_tag(:post_id, @post.id) %>
+    <%= form.submit "Like", class: "likeornot" %>
+    <% end %>
+
+
     <% @comments.each do |comment| %>
       <p><b><%= User.find_by(id: comment.user_id).name %>: </b><%= comment.text %></p>
     <% end %>
