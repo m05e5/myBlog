@@ -10,7 +10,6 @@
   User.create(
     name: "Gustave John Doe#{i}", 
     photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Oqk6CV4a1DSvkFJxOUjRoKuZ7pE-Ri7AkA&usqp=CAU",
-    post_counter: 5, 
     bio: "The emergence and growth of blogs in the late 1990s coincided with the advent of web publishing tools that facilitated 
     the posting of content by non-technical users who did not have much experience with HTML or computer programming. Previously, 
     a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early 
@@ -32,8 +31,6 @@ Post.create(
   a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early 
   Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 ", 
   user_id: 3,
-  like_counter: 0,
-  comment_counter: 0
 )
 
 Post.create(
@@ -50,8 +47,6 @@ Post.create(
   a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early 
   Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 ", 
   user_id: 2,
-  like_counter: 3,
-  comment_counter: 8
 )
 
 Post.create(
@@ -69,8 +64,6 @@ Post.create(
   a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early 
   Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 ", 
   user_id: 2, 
-  like_counter: 3, 
-  comment_counter: 8
 )
 Post.create(
   title: "My hero academia", 
@@ -87,8 +80,6 @@ Post.create(
   a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early 
   Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 ", 
   user_id: 2, 
-  like_counter: 3, 
-  comment_counter: 8
 )
 Post.create(
   title: "Naruto shippuden", 
@@ -105,8 +96,6 @@ Post.create(
   a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early 
   Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 ", 
   user_id: 1, 
-  like_counter: 3, 
-  comment_counter: 8
 )
 Post.create(
   title: "The lion king", 
@@ -123,8 +112,6 @@ Post.create(
   a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early 
   Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 ", 
   user_id: 1, 
-  like_counter: 3, 
-  comment_counter: 8
 )
 Post.create(
   title: "Kimetsu no yaiba", 
@@ -141,8 +128,6 @@ Post.create(
   a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early 
   Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 ", 
   user_id: 1, 
-  like_counter: 3, 
-  comment_counter: 8
 )
 Post.create(
   title: "Ao haru ride", 
@@ -159,8 +144,6 @@ Post.create(
   a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early 
   Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 ", 
   user_id: 2, 
-  like_counter: 3, 
-  comment_counter: 8
 )
 Post.create(
   title: "My little monster", 
@@ -177,8 +160,6 @@ Post.create(
   a knowledge of such technologies as HTML and File Transfer Protocol had been required to publish content on the Web, and early 
   Web users therefore tended to be hackers and computer enthusiasts. In the 2010s, the majority are interactive Web 2.0 ", 
   user_id: 3, 
-  like_counter: 3, 
-  comment_counter: 8
 )
 
 Like.create(user_id: 1, post_id: 1)

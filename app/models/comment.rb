@@ -1,16 +1,14 @@
 class Comment < ApplicationRecord
   validates :text, presence: true
 
-  belongs_to :post
+  belongs_to :post, counter_cache: :comments_counter
   belongs_to :user
 
-  after_validation :update_comment_count
+  after_validation :update_counter
 
   private
 
-  def update_comment_count
-    c_counter = Post.find_by(id: 2)
-    c_counter.comment_counter = 1
-    c_counter.save
+  def update_counter
+    post.increment!(:comments_counter)
   end
 end

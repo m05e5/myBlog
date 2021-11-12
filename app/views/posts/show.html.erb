@@ -1,6 +1,6 @@
 <div class="post">
   <h2> <%= @post.title %></h2>
-  <div class="counter"><p>Comments: <%= @post.comment_counter %>,Likes: <%= @post.like_counter %><p></div>
+  <div class="counter"><p>Comments: <%= @post.comments_counter %>,Likes: <%= @post.likes_counter %><p></div>
   <div class='text'><%= @post.text %></div> 
   <div class='comments'>
     <% @comments.each do |comment| %>
