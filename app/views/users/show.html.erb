@@ -1,1 +1,25 @@
-<h1>here is a specific user</h1>
+<div class = 'container'>
+  <a href="<%= @user.id %>/posts" class="user">
+    <div class="user-head">
+      <img src=<%= @user.photo %> class='user-img' alt='hello world'>
+      <div class='user-info'>
+        <h2>Name: <%= @user.name %></h2><br>
+        <div class='u_post_count'>
+          <p>Number of posts: <%= @user.posts_counter %> </p>
+        </div>
+      </div>
+    </div>
+    <div class='user-bio'>
+      <h3>Bio</h3>
+      <%= @user.bio %>
+    </div>
+  </a>
+  <% @posts.each do |post| %>
+    <a href="<%= @user.id %>/posts/<%= post.id %>" class="post">
+      <h2> <%= post.title %> </h2>
+      <div class='long-text'><%= post.text %></div>
+      <div class="counter"><p>Comments: <%= post.comments_counter %>,Likes: <%= post.likes_counter %><p></div>
+    </a>
+  <% end %>
+   <a href="<%= @user.id %>/posts" class="see_more"> See all posts</a>
+</div>

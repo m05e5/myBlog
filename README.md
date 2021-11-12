@@ -1,24 +1,85 @@
-# README
+# MyBlog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple blog app project developed in Ruby on Rails
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby on Rails
+- PostgreSQL
 
-* System dependencies
+## Getting Started
 
-* Configuration
+Clone the project
 
-* Database creation
+### Prerequisites
 
-* Database initialization
+- [Ruby](https://www.ruby-lang.org/en/)
+- [Rails](https://gorails.com/)
 
-* How to run the test suite
+### Setup
 
-* Services (job queues, cache servers, search engines, etc.)
+- Make sure you have Ruby IRB installed on your computer
+- Clone or download this repo on your machine
+- Enter project directory
 
-* Deployment instructions
+### Install
 
-* ...
+bundle install
+
+### Database
+
+```rb
+# Create user
+sudo -u postgres createuser blog -s
+
+# Create the database
+rake db:create
+
+# Load the schema
+rails db:schema:load
+
+## Apply migration (only if you generate a new migration file)
+rails db:migrate
+
+# Seed
+rails db:seed
+
+```
+
+### Run
+
+rails server
+
+### Test
+
+```rb
+rspec
+```
+
+### Troubleshoot
+
+### Rspec failing
+
+RAILS_ENV=test rake db:reset
+
+## Authors
+
+👤 **caleb moses**
+
+- GitHub: [@m05e5](https://github.com/m05e5)
+- Twitter: [@caleb moses](https://twitter.com/CalebMo69401446)
+- LinkedIn: [caleb moses](https://www.linkedin.com/in/caleb-moses-0a1b531b9/)
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Microverse

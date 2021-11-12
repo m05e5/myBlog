@@ -1,3 +1,151 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.post {
+  text-decoration: none;
+  color: black;
+  // padding: 1rem;
+  background-color: rgb(248, 248, 248);
+  margin: 1rem 1rem 1rem 1rem;
+  width: 60vw;
+
+  h2 {
+    margin: 5px;
+  }
+
+  .counter {
+    margin: 1rem;
+    display: flex;
+    justify-content: end;
+
+    p {
+      // margin: 1rem;
+      margin: 0;
+      color: grey;
+      font-style: italic;
+      font-size: 15px;
+    }
+  }
+}
+
+.user {
+  text-decoration: none;
+  color: black;
+  width: 60%;
+  min-width: 500px;
+  // height: 115px;
+  border: 0.5px solid rgb(247, 247, 247);
+  box-shadow: 2px 2px 3px rgb(218, 218, 218);
+
+  .user-head {
+    gap: 1rem;
+    display: flex;
+
+    .user-img {
+      height: 115px;
+      width: 160px;
+    }
+
+    .user-info {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .u_post_count {
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        p {
+          margin: 0;
+          color: grey;
+          font-style: italic;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+
+  .user-bio {
+    text-align: justify;
+    margin: 2rem 1rem 1rem 5px;
+  }
+}
+
+//index view
+.user-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 2rem;
+
+  a {
+    text-decoration: none;
+    width: 50%;
+    color: black;
+  }
+
+  .user {
+    width: 100%;
+    min-width: 500px;
+    height: 115px;
+    display: flex;
+    gap: 1rem;
+    box-shadow: 2px 2px 3px rgb(218, 218, 218);
+
+    .user-img {
+      height: 100%;
+      width: 160px;
+    }
+
+    .user-info {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+
+      .u_post_count {
+        margin: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        p {
+          margin: 0;
+          color: grey;
+          font-style: italic;
+          font-size: 15px;
+        }
+      }
+    }
+  }
+}
+
+//show view
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100vw;
+}
+
+.long-text {
+  margin-left: 5px;
+  text-align: justify;
+  line-height: 20px;
+  overflow: hidden;
+  height: 40px;
+  text-overflow: ellipsis;
+  // white-space: nowrap;
+}
+
+.see_more {
+  text-decoration: none;
+  color: black;
+  border: 0.5px solid rgb(185, 185, 185);
+  background-color: rgb(194, 194, 194);
+  cursor: pointer;
+  padding: 5px;
+  box-shadow: 3px 3px 4px rgb(218, 218, 218);
+}
