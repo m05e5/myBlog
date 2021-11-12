@@ -6,11 +6,10 @@ class Post < ApplicationRecord
   has_many :comments, foreign_key: 'post_id'
   has_many :likes, foreign_key: 'post_id'
 
-
   def last_comments(the_post_id)
     Comment.where("posts_id = #{the_post_id}", params[:posts_id]).limit(5).order(created_at: :desc)
   end
-  
+
   after_validation :update_counter
 
   private
