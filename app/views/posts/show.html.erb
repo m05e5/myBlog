@@ -7,4 +7,9 @@
       <p><b><%= User.find_by(id: comment.user_id).name %>: </b><%= comment.text %></p>
     <% end %>
   </div>
+  <%= form_with model: @comment, class: "comment-form", url: @post.id.to_s+'/create' do |form| %>
+  <h3>Do a comment: </h3>
+    <%= form.text_field :text%>
+    <%= form.submit "Submit", class: "submit" %>
+  <% end %>
 </div>
