@@ -28,7 +28,7 @@ class PostsController < ApplicationController
 
     redirect_to("/users/#{user.id}/posts/#{@post.id}") if @post.save && post_params
   end
-  
+
   private
 
   def post_params
