@@ -21,4 +21,12 @@ RSpec.describe User, type: :model do
       expect(subject).to_not be_valid
     end
   end
+
+  describe '#recent_posts' do
+    subject { User.first }
+
+    it 'should return 3 posts' do
+      expect(subject.my_recent_posts.length).to be(3)
+    end
+  end
 end
