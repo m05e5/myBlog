@@ -26,7 +26,7 @@ class PostsController < ApplicationController
     @post.text = text
     @post.title = title
 
-    redirect_to("/users/#{user.id}/posts/#{@post.id}") if @post.save && post_params
+    redirect_to("/users/#{user.id}/posts/#{@post.id}", notice: 'post created succesfully') if @post.save && post_params
   end
 
   private
