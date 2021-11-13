@@ -9,6 +9,6 @@ class LikesController < ApplicationController
     @post.likes_counter = (@post.likes_counter + 1)
     @post.save
 
-    redirect_to(request.env['HTTP_REFERER']) if @like.save
+    redirect_to(request.env['HTTP_REFERER'], notice: 'like added') if @like.save
   end
 end

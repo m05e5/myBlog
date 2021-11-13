@@ -6,7 +6,7 @@ class Comment < ApplicationRecord
 
   after_validation :update_counter
 
-  private
+  # private
 
   def update_counter
     post.increment!(:comments_counter)

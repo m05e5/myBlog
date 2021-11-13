@@ -2,6 +2,8 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :comments_counter, :likes_counter, numericality: { greater_than_or_equal_to: 0 }
 
+  validates :title, length: { maximum: 250, too_long: 'the title is too long' }
+
   belongs_to :user, counter_cache: :posts_counter
   has_many :comments, foreign_key: 'post_id'
   has_many :likes, foreign_key: 'post_id'
@@ -17,8 +19,4 @@ class Post < ApplicationRecord
   def update_counter
     user.increment!(:posts_counter)
   end
-
-  # def update_counter(value)
-  #   user.update posts_counter: value
-  # end
 end

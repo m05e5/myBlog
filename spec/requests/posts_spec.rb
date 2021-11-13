@@ -10,10 +10,6 @@ RSpec.describe 'Posts', type: :request do
     it 'should render correct template' do
       expect(response).to render_template(:index)
     end
-
-    it 'body content should match' do
-      expect(response.body).to include('Here is a list of posts for a given user')
-    end
   end
 
   describe 'GET /show' do
@@ -24,10 +20,6 @@ RSpec.describe 'Posts', type: :request do
 
     it 'should render correct template' do
       expect(response).to render_template(:show)
-    end
-
-    it 'body content should match' do
-      expect(response.body).to include('this is the post for a specific user')
     end
   end
 end
