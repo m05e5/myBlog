@@ -8,6 +8,12 @@ class CommentsController < ApplicationController
     @comment.user_id = user.id
     @comment.post_id = params[:post_id]
 
-    redirect_to(request.env['HTTP_REFERER']) if @comment.save
+    redirect_to(request.env['HTTP_REFERER']) if @comment.save && comment_params
+  end
+
+  private
+
+  def comment_params
+    params.permit(:text)
   end
 end
