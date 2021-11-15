@@ -7,8 +7,7 @@ class CommentsController < ApplicationController
     user = current_user
     @comment.user_id = user.id
     @comment.post_id = params[:post_id]
-
-    redirect_to(request.env['HTTP_REFERER'], notice: 'Comment created succesfully') if comment_params && @comment.save
+    redirect_to(request.env['HTTP_REFERER'], flash: { success: "Comment added succesfully" }) if comment_params && @comment.save
   end
 
   private
