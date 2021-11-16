@@ -28,6 +28,21 @@
   }
 }
 
+.create-button {
+  width: 60%;
+  display: flex;
+  justify-content: end;
+  margin-bottom: 1rem;
+
+  a {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(85, 194, 194);
+    padding: 10px;
+    border-radius: 10px;
+  }
+}
+
 .user {
   text-decoration: none;
   color: black;
