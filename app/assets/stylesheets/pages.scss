@@ -7,6 +7,7 @@
   justify-content: center;
   align-items: center;
   height: 80vh;
+
   .form {
     background-color: rgb(243, 243, 243);
     border-radius: 20px;
@@ -15,9 +16,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
     .field {
       margin: 5px;
       width: 30vw;
+
       .input {
         width: 100%;
         border: 0.5px solid rgb(185, 185, 185);
@@ -25,6 +28,7 @@
         border-radius: 9px;
       }
     }
+
     .actions {
       text-decoration: none;
       color: white;
