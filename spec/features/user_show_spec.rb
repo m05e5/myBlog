@@ -1,5 +1,5 @@
 require 'rails_helper'
-RSpec.describe 'User show page', type: :system do
+RSpec.describe 'User show page', type: :feature do
   describe 'user show page' do
     before do
       visit new_user_session_path
@@ -27,7 +27,7 @@ RSpec.describe 'User show page', type: :system do
       expect(page).to have_content('caleb')
     end
     it 'I can see the number of posts the user has written.' do
-      expect(page).to have_content('Number of posts: 6')
+      expect(page).to have_content('Number of posts: 8')
     end
     it 'I can see the user\'s bio' do
       expect(page).to have_content('me')

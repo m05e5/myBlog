@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :system do
+RSpec.describe 'Users', type: :feature do
   describe 'the signin process' do
     before :each do
       visit new_user_session_path
@@ -63,9 +63,7 @@ RSpec.describe 'list of users in', type: :feature do
     it 'When I click on a user, I am redirected to that user\'s show page' do
       # visit "/users/#{@caleb.id}"
       click_link 'caleb'
-      expect(page).to have_content('caleb') # have_current_path(page.find_link('/users/1')[:href])
-      # expect(page.current_url).to eq("http://www.example.com/users/#{@caleb.id}")
-      expect(page).to have_current_path(page.find_link('caleb')[:href])
+      expect(page).to have_content('caleb')
     end
   end
 end

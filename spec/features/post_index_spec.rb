@@ -17,7 +17,7 @@ RSpec.describe 'showing the list of user\'s last published posts', type: :featur
         fill_in 'Content', with: "#{i + 1}Lorem ipsum dolor set amet."
         click_button 'Submit'
       end
-      visit "/users/#{@peter.id}/posts/"
+      visit "/users/#{@peter.id}/posts"
     end
 
     it 'I can see the user\'s profile picture.' do
@@ -50,7 +50,7 @@ RSpec.describe 'showing the list of user\'s last published posts', type: :featur
 
     it 'When I click on a post, it redirects me to that post\'s show page.' do
       click_link 'Post #1'
-      expect(page).to have_current_path(user_post_path(@peter.posts.first.id))
+      expect(page).to have_current_path(user_post_path(@peter.id, @peter.posts.first.id))
     end
   end
 end
