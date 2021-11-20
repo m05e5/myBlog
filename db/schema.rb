@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2021_11_16_232616) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "photo"
+    t.string "photo", default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Oqk6CV4a1DSvkFJxOUjRoKuZ7pE-Ri7AkA&usqp=CAU"
     t.string "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
