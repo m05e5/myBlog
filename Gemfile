@@ -25,6 +25,9 @@ gem 'cancancan'
 gem 'devise'
 gem 'devise-jwt'
 gem 'rack-cors'
+gem 'rswag-api'
+gem 'rswag-ui'
+
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
@@ -36,6 +39,7 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
   gem 'rails-controller-testing'
+  gem 'rswag-specs'
 end
 
 group :development do
