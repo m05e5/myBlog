@@ -1,3 +1,4 @@
+<%= render partial: 'shared/header' %>
 <div class = 'container'>
   <div class="user">
     <div class="user-head">
@@ -15,7 +16,7 @@
     </div>
   </div>
   <% @posts.each do |post| %>
-    <div class="post">
+    <a href="posts/<%= post.id %>" class="post">
       <h2> <%= post.title %></h2>
       <div class='long-text'><%= post.text %></div>
       <div class="counter"><p>Comments: <%= post.comments_counter %>,Likes: <%= post.likes_counter %><p></div>
@@ -24,6 +25,6 @@
           <p><b><%= User.find_by(id: comment.user_id).name %>: </b><%= comment.text %></p>
         <% end %>
       </div>
-    </div>
+    </a>
   <% end %>
 </div>

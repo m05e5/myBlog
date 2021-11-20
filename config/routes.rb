@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   resources :users, only: [:index, :show] do 
-    resources :posts, only: [:index, :show] 
+    resources :posts, only: [:index, :show]
   end
   get '/create_post', to: 'posts#create_post'
   post '/create', to: 'posts#create'

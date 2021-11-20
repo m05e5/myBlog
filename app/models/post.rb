@@ -5,8 +5,8 @@ class Post < ApplicationRecord
   validates :title, length: { maximum: 250, too_long: 'the title is too long' }
 
   belongs_to :user, counter_cache: :posts_counter
-  has_many :comments, foreign_key: 'post_id'
-  has_many :likes, foreign_key: 'post_id'
+  has_many :comments, dependent: :destroy, foreign_key: 'post_id'
+  has_many :likes, dependent: :destroy, foreign_key: 'post_id'
 
   def last_comments(the_post_id)
     Comment.where("posts_id = #{the_post_id}", params[:posts_id]).limit(5).order(created_at: :desc)

@@ -10,9 +10,16 @@ class CommentsController < ApplicationController
     redirect_to(request.env['HTTP_REFERER'], notice: 'Comment added succesfully') if comment_params && @comment.save
   end
 
+  def destroy
+    @comment = Comment.find(params[:id])
+    @comment.destroy
+    redirect_to(request.env['HTTP_REFERER'], notice: 'Comment deleted succesfully')
+  end
+
   private
 
   def comment_params
     params.permit(:text)
   end
 end
+# 77946398 plombier emanuel

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_15_104009) do
+ActiveRecord::Schema.define(version: 2021_11_16_232616) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_104009) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "photo"
+    t.string "photo", default: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3Oqk6CV4a1DSvkFJxOUjRoKuZ7pE-Ri7AkA&usqp=CAU"
     t.string "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 2021_11_15_104009) do
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
+    t.string "role"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

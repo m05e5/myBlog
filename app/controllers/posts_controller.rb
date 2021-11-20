@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @posts = Post.where(user_id: params[:user_id]).order(created_at: :desc)
     @user = User.find_by(id: params[:user_id])
@@ -27,6 +29,12 @@ class PostsController < ApplicationController
     @post.title = title
 
     redirect_to("/users/#{user.id}/posts/#{@post.id}", notice: 'post created succesfully') if @post.save && post_params
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+    redirect_to(request.env['HTTP_REFERER'], notice: 'Post deleted succesfully')
   end
 
   private
