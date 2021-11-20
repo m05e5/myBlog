@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
+
   def index
     @posts = Post.where(user_id: params[:user_id]).order(created_at: :desc)
     @user = User.find_by(id: params[:user_id])

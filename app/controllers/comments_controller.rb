@@ -22,4 +22,4 @@ class CommentsController < ApplicationController
     params.permit(:text)
   end
 end
-#77946398 plombier emanuel
+# 77946398 plombier emanuel
